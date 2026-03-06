@@ -8,21 +8,30 @@ export const Greeting = () => {
     >
       <motion.div
         animate={{ opacity: 1, y: 0 }}
-        className="font-semibold text-xl md:text-2xl"
+        className="font-semibold text-2xl md:text-3xl"
         exit={{ opacity: 0, y: 10 }}
         initial={{ opacity: 0, y: 10 }}
-        transition={{ delay: 0.5 }}
+        transition={{ delay: 0.4 }}
       >
         ¡Hola, mi amor! 💕
       </motion.div>
       <motion.div
         animate={{ opacity: 1, y: 0 }}
-        className="text-xl text-pink-400 md:text-2xl"
+        className="mt-1 text-xl text-pink-400 md:text-2xl"
         exit={{ opacity: 0, y: 10 }}
         initial={{ opacity: 0, y: 10 }}
-        transition={{ delay: 0.6 }}
+        transition={{ delay: 0.55 }}
       >
-        Soy Majo, ¿en qué te puedo ayudar hoy? 🌸
+        Soy Majo, tu asistente personal 🌸
+      </motion.div>
+      <motion.div
+        animate={{ opacity: 1, y: 0 }}
+        className="mt-3 text-sm text-muted-foreground"
+        exit={{ opacity: 0, y: 10 }}
+        initial={{ opacity: 0, y: 10 }}
+        transition={{ delay: 0.7 }}
+      >
+        Creada con amor por Juan, especialmente para ti ✨
       </motion.div>
     </div>
   );
