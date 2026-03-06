@@ -15,10 +15,10 @@ type SuggestedActionsProps = {
 
 function PureSuggestedActions({ chatId, sendMessage }: SuggestedActionsProps) {
   const suggestedActions = [
-    "What are the advantages of using Next.js?",
-    "Write code to demonstrate Dijkstra's algorithm",
-    "Help me write an essay about Silicon Valley",
-    "What is the weather in San Francisco?",
+    "¿Puedes escribirme un poema de amor? 💕",
+    "Ayúdame a planear una cita romántica especial 🌹",
+    "¿Cuáles son ideas de regalos creativos para mi pareja? 🎁",
+    "Escríbeme un mensaje bonito para sorprender a alguien especial 💌",
   ];
 
   return (
@@ -66,3 +66,4 @@ export const SuggestedActions = memo(
     return true;
   }
 );
+
