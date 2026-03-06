@@ -1,4 +1,5 @@
 import { cookies } from "next/headers";
+import { redirect } from "next/navigation";
 import Script from "next/script";
 import { Suspense } from "react";
 import { AppSidebar } from "@/components/app-sidebar";
@@ -25,6 +26,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 async function SidebarWrapper({ children }: { children: React.ReactNode }) {
   const [session, cookieStore] = await Promise.all([auth(), cookies()]);
   const isCollapsed = cookieStore.get("sidebar_state")?.value !== "true";
+
+  // Si no hay sesión, redirigir al endpoint de guest para crear sesión automáticamente
+  if (!session?.user) {
+    redirect("/api/auth/guest");
+  }
 
   return (
     <SidebarProvider defaultOpen={!isCollapsed}>
