@@ -15,10 +15,10 @@ type SuggestedActionsProps = {
 
 function PureSuggestedActions({ chatId, sendMessage }: SuggestedActionsProps) {
   const suggestedActions = [
-    "¿Puedes escribirme un poema de amor? 💕",
-    "Ayúdame a planear una cita romántica especial 🌹",
-    "¿Cuáles son ideas de regalos creativos para mi pareja? 🎁",
-    "Escríbeme un mensaje bonito para sorprender a alguien especial 💌",
+    "Cuéntame algo interesante sobre China 🇨🇳",
+    "Ayúdame a entender un tema de matemáticas o química 🧪",
+    "Recomiéndame una canción de Bad Bunny para mi mood 🎵",
+    "Escríbeme un poema de amor muy bonito 💕",
   ];
 
   return (
@@ -56,13 +56,8 @@ function PureSuggestedActions({ chatId, sendMessage }: SuggestedActionsProps) {
 export const SuggestedActions = memo(
   PureSuggestedActions,
   (prevProps, nextProps) => {
-    if (prevProps.chatId !== nextProps.chatId) {
-      return false;
-    }
-    if (prevProps.selectedVisibilityType !== nextProps.selectedVisibilityType) {
-      return false;
-    }
-
+    if (prevProps.chatId !== nextProps.chatId) return false;
+    if (prevProps.selectedVisibilityType !== nextProps.selectedVisibilityType) return false;
     return true;
   }
 );
